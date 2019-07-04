@@ -3,6 +3,7 @@ package ru.skillbranch.devintensive.utils
 object Utils {
 
     private val translitMap: Map<Char, String> = hashMapOf(
+
         'а' to "a",
         'б' to "b",
         'в' to "v",
@@ -39,6 +40,7 @@ object Utils {
     )
 
     fun parseFullName(fullName: String?) : Pair<String?, String?> {
+
         val processedString = fullName?.trim()
         if (processedString.isNullOrBlank())
             return null to null
@@ -66,6 +68,7 @@ object Utils {
     }
 
     fun toInitials(firstName: String?, lastName: String?) : String? {
+
         if (firstName?.trim().isNullOrBlank() && lastName?.trim().isNullOrBlank())
             return null
         val firstInitial = firstName?.trim()?.get(0)?.toUpperCase() ?: ""

@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.extention
+package ru.skillbranch.devintensive.extensions
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -15,7 +15,6 @@ fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy") : String {
 }
 
 fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND) : Date {
-
     var time = this.time
 
     time += when(units) {

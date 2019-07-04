@@ -12,10 +12,13 @@ data class User (
     var respect : Int = 0,
     var lastVisit : Date? = Date(),
     var isOnline : Boolean = false
+
 ){
 
     companion object Factory {
+
         private var lastId : Int = -1
+
         fun makeUser(fullName: String?) : User {
             lastId++
             val (firstName, lastName) = Utils.parseFullName(fullName)
@@ -23,6 +26,7 @@ data class User (
         }
 
         fun makeUser(builder : Builder) : User {
+
             if (builder.id.all { it.isDigit() })
                 lastId = builder.id.toInt()
             else
@@ -41,6 +45,7 @@ data class User (
         var respect : Int = 0,
         var lastVisit : Date? = Date(),
         var isOnline : Boolean = false
+
     ){
         fun id(id: String) = apply { this.id = id }
         fun firstName(firstName: String?) = apply { this.firstName = firstName }
